@@ -8,10 +8,17 @@
     <title>Book-Archive</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <style>
+       
         #spinner {
             display: none;
         }
+        #total {
+            display: none;
+        }
         #error-message {
+            display: none;
+        }
+        #error-message2 {
             display: none;
         }
     </style>
@@ -26,20 +33,35 @@
         <button onclick="searchBook()" class="btn btn-outline-secondary" type="button"
             id="button-search">search</button>
            </div>
-    <h5 id="spinner" class="text-center">Loading..</h5>
+           <!-- spinner -->
+        <div id="spinner">
+            <div  class="d-flex align-items-center justify-content-center">
+                <strong>Loading</strong>
+                <div class="spinner-grow" role="status" aria-hidden="true"></div>
+                <div class="spinner-grow" role="status" aria-hidden="true"></div>
+                <div class="spinner-grow" role="status" aria-hidden="true"></div>
+              </div>
+        </div>
+          
     
     <!-- total-found -->
     <div class="container mt-4">
-               <h1 class="text-center">Total Found: <span id="total-found" class="fw-3 fw-bold"></span></h1>
+               <h1 id="total" class="text-center">Total Found: <span id="total-found" class="fw-3 fw-bold"></span>
+            <hr></h1>
+               
+    </div>
+    <!-- error message -->
+    <div>
+        <p id="error-message" class=" text-danger text-center fw-bold bg-danger text-dark">No Result Found</p>
     </div>
     <div>
-        <p id="error-message" class=" text-danger text-center">No Result Found</p>
+        <p id="error-message2" class=" text-danger text-center fw-bold bg-danger text-dark">Please search something</p>
     </div>
 
    
 
     <!-- Book search result -->
-    <section class="container">
+    <section class="container mt-4">
         <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
         </div>
     </section>
